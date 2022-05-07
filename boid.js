@@ -3,7 +3,7 @@
 //https://www.youtube.com/watch?v=mhjuuHl6qHM
 //https://processing.org/examples/flocking.html
 
-class Boid {
+class BoidOld {
     constructor() {
         this.position = createVector(random(width), random(height));
      //   this.position = createVector((width/2), (height/2));
@@ -13,7 +13,7 @@ class Boid {
         this.acceleration = createVector();
         this.maxForce = 0.03;
         this.maxSpeed = 2;
-        this.r = 1;
+        this.r = 2.0;
     }
 
     edges() {
@@ -126,6 +126,25 @@ class Boid {
 
     }
     show() {
+        // Draw a triangle rotated in the direction of velocity
+        let theta = this.velocity.heading() + radians(90);
+        // heading2D() above is now heading() but leaving old syntax until Processing.js catches up
+
+        fill(200, 100);
+        stroke(255);
+        push();
+        //pushMatrix();
+        translate(this.position.x, this.position.y);
+        rotate(theta);
+        beginShape(TRIANGLES);
+        vertex(0, -this.r*2);
+        vertex(-this.r, this.r*2);
+        vertex(this.r, this.r*2);
+        endShape();
+        //popMatrix();
+        pop();
+    }
+    shown() {
         strokeWeight(8)
         stroke(255)
 
@@ -140,7 +159,7 @@ class Boid {
           vertex(0, -this.r*2);
             vertex(-this.r, this.r*2);
             vertex(this.r, this.r*2);
-            endShape(CLOSE);
+            endShape();
             //popMatrix;
         pop();
 
