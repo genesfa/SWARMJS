@@ -35,10 +35,10 @@ function draw(){
     background(50);
    flock.run();
 
-    text('Align Force (0-5)', 20,350);
-    text('Cohesion Force (0-5)', 200,350);
-    text('Separation Force (0-5)', 400,350);
-    text('Neighbor dist (0-100)', 600,350);
+    text('Align Force (0-5): ' + alignSlider.value(), 20,350);
+    text('Cohesion Force (0-5): ' + cohesionSlider.value(), 200,350);
+    text('Separation Force (0-5): ' + separationSlider.value(), 400,350);
+    text('Neighbor dist (0-100): ' + neighbordistSlider.value(), 600,350);
 }
 
 function mousePressed() {
