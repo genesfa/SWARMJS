@@ -34,8 +34,15 @@ class Boid {
         this.count=Count;
     }
 
-     run(boids) {
-        this.flock(boids);
+    destructor(){
+        this.position = undefined;
+    }
+
+     run(boids, isFlocking) {
+        if (isFlocking) {
+            this.flock(boids);
+        }
+
        // this.blink(boids);
         this.update();
         this.borders();

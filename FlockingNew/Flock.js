@@ -4,10 +4,10 @@ class Flock {
          this.boids = []
     }
 
-    run() {
+    run(isFlocking) {
 
         for (let b of this.boids){
-            b.run(this.boids);
+            b.run(this.boids,isFlocking);
             //b.blinkOn();
         }
     }
@@ -27,6 +27,14 @@ class Flock {
 
     addBoid( b){
         this.boids.push(b);
+        }
+
+        deleteAllBoid() {
+            for (let i = 0; i < 150; i++) {
+                this.boids[i].destructor();
+            }
+
+        this.boids = [];
         }
 
 }
