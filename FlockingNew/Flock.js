@@ -33,7 +33,7 @@ class Flock {
         }
 
         deleteAllBoid() {
-            for (let i = 0; i < 150; i++) {
+            for (let i = 0; i < this.boids.length; i++) {
                 this.boids[i].destructor();
             }
 

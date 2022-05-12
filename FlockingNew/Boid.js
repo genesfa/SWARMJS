@@ -10,7 +10,7 @@ class Boid {
     blinked = false;
 
      period;      // determines the period
-     count;     // determines the phase
+     phase;     // determines the phase
 
      state;       // state; either 0 or 1, off or on
      duration = 5;// how many frames a pulse lasts
@@ -31,7 +31,7 @@ class Boid {
 
         this.period=Period;
 
-        this.count=Count;
+        this.phase=Count;
     }
 
     destructor(){
@@ -261,7 +261,7 @@ else {
 
     firefly(boids) {
         // count keeps track of the cycle, increases every frame
-        this.count += 1;
+        this.phase += 1;
 
         //loc.add(vel);
         // look what flowfield-vector to listen to
@@ -291,7 +291,7 @@ else {
                 // if the firefly is just behind the rest, boost is positive
                 // if the firefly is just ahead of the rest, boost is negative
 
-                if (this.count < this.period/2.0) {
+                if (this.phase < this.period/2.0) {
                     boost = boost*-1;
                 }
 
@@ -314,27 +314,32 @@ else {
         // if the boost makes the phase bigger that the period,
         // adding extra phase stops when count = period
 
-        if (this.count + boost > this.period) {
+        if (this.phase + boost > this.period) {
             // I don't know why this piece of ugly code is necessary,
             // but count = period doesn't work...
-            while (this.count<=this.period) {
+            while (this.phase<=this.period) {
                // this.count +=.1;
-                this.count = this.count + 0.1;
+                this.phase = this.phase + 0.1;
             }
         }
         // otherwise; add the extra phase
         else {
-            this.count = this.count + boost;
+            this.phase = this.phase + boost;
+        }
+
+        if (this.phase < 0.0) {
+
+            this.phase =0.1
         }
 
         // during the time between the count reaching period
         // and count reaching period+duration, state = 1, firefly lights up
-        if (this.count >= this.period && this.count <= (this.period + this.duration)) {
+        if (this.phase >= this.period && this.phase <= (this.period + this.duration)) {
             this.state = 1;
         }
         else {
             if (this.state === 1) {
-                this.count = 0;
+                this.phase = 0;
             }
             this.state = 0;
         }
