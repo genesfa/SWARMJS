@@ -1,6 +1,6 @@
 class NewGraph {
 
-    isGraph = true;
+    isGraph;
     noRestart = true;
     dataPointsArray = [];
     dataArray2 = [];
@@ -17,33 +17,19 @@ class NewGraph {
 
 
          this.time = new Date;
-    }
-
-    graphOn() {
-        this.isGraph = true;
+         this.isGraph = true;
     }
 
 
 
-    graphOff() {
-        this.isGraph = false;
-    }
-
-
-    toggleGraph() {
-        this.isGraph = !this.isGraph;
-    }
 
 
 
-    restartGraph() {
-        this.makeGraph()
-        this.noRestart = false;
-    }
+
 
     updateChart() {
 
-        if (this.isGraph && this.noRestart) {
+        if (this.isGraph) {
             this.time.setTime(this.time.getTime() + this.updateInterval);
             let Boids = flock.getBoids();
             //console.log(Boids[0].period)

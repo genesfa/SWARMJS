@@ -58,7 +58,7 @@ let radio2;
      setInterval(function () {
          graph.updateChart()
      }, graph.updateInterval);
-     button2.mousePressed(graph.toggleGraph);
+     button2.mousePressed(toggleGraph);
 }
 
 function draw(){
@@ -86,7 +86,9 @@ function draw(){
 }
 
 
-
+function toggleGraph(){
+    graph.isGraph = !graph.isGraph
+}
 function restart(){
 flock.deleteAllBoid();
     for (let i = 0; i < boidCountSlider.value(); i++) {
