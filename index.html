@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,12 +7,46 @@
     <title>flocking</title>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
 
-    <!--  <script src="boid.js"></script>
-     <script src="sketch.js"></script>-->
+    <!---->
       <script src="FlockingNew/Boid.js"></script>
       <script src="FlockingNew/Flocking.js"></script>
       <script src="FlockingNew/Flock.js"></script>
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="FlockingNew/newGraph.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <!-- Create a div where the graph will take place -->
 
        </head>
-       <body></body>
+
+       <body>
+         <div id="canvasForHTML"></div>
+      <!-- <div id="my_dataviz"></div> -->
+       <script src="FlockingNew/Graph.js"></script>
+         <div id="chartContainer" style="height: 500px; width: 100%;"></div>
+
+   <!--
+       <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+       <script>
+           import ApexCharts from 'apexcharts'
+           var options = {
+               chart: {
+               type: 'bar'
+       },
+       series: [
+       {
+       name: 'sales',
+       data: [30, 40, 35, 50, 49, 60, 70, 91, 125]
+       }
+       ],
+       xaxis: {
+       categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
+       }
+       }
+
+       var chart = new ApexCharts(document.querySelector('#chart'), options)
+       chart.render()
+       </script> -->
+       </body>
        </html>

@@ -8,7 +8,8 @@ let radio;
     textSize(15);
     noStroke();
 
-    createCanvas(800, 360);
+    var canvas = createCanvas(800, 360);
+    canvas.parent('canvasForHTML');
     alignSlider = createSlider(0, 5, 1.0, 0.1);
 
     cohesionSlider = createSlider(0, 5, 1.0, 0.1);

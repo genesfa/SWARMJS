@@ -50,6 +50,7 @@ class Boid {
         this.render();
         // this.display()
         this.firefly(boids);
+        //console.log(this.period)
       //  this.blink();
     }
     
