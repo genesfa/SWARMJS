@@ -11,6 +11,9 @@ class Flock {
             //b.blinkOn();
         }
     }
+    getBoids() {
+        return this.boids;
+    }
 
     async blink() {
 
