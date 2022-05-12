@@ -12,10 +12,10 @@
     dataArray2.push({
     type: "line",
     xValueType: "dateTime",
-    yValueFormatString: "$####.00",
+    yValueFormatString: "####.00",
     xValueFormatString: "hh:mm:ss TT",
     showInLegend: true,
-    name: "Company " + i,
+    name: "Boid " + i,
     //dataPoints: dataPoints1
     dataPoints: dataPointsArray[i]
 });
@@ -23,7 +23,7 @@
     var dataArray = [{
     type: "line",
     xValueType: "dateTime",
-    yValueFormatString: "$####.00",
+    yValueFormatString: "####.00",
     xValueFormatString: "hh:mm:ss TT",
     showInLegend: true,
     name: "Company A",
@@ -33,7 +33,7 @@
 {
     type: "line",
     xValueType: "dateTime",
-    yValueFormatString: "$####.00",
+    yValueFormatString: "####.00",
     showInLegend: true,
     name: "Company B" ,
     //dataPoints: dataPoints2
@@ -146,8 +146,9 @@ dataPoints: dataPoints2
     // }
 
     // updating legend text with  updated with y Value
+        /*
     chart.options.data[0].legendText = " Company A  $" + yValue1;
-    chart.options.data[1].legendText = " Company B  $" + yValue2;
+    chart.options.data[1].legendText = " Company B  $" + yValue2;*/
     chart.render();
 }
 // generates first set of dataPoints
